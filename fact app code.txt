@@ -1,0 +1,71 @@
+import kivy
+from kivy.app import App
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.layout import Layout
+from kivy.uix.textinput import TextInput
+from kivy.uix.button import Button
+
+
+class travelapp(GridLayout):
+    def __int__(self, **kwargs):
+        super(travelapp, self).__int__()
+        self.cols = 5
+
+        self.add_widget(Layout(Text == "CONSUMER NAME "))
+        self.C_NAME == TextInput()
+        self.add_widget(self.C_NAME)
+
+        self.add_widget(Layout(Text == "AGE"))
+        self.AGE == TextInput()
+        self.add_widget(self.AGE)
+
+        self.add_widget(Layout(Text == "GENDER"))
+        self.GENDER == TextInput()
+        self.add_widget(self.GENDER)
+
+
+
+        self.add_widget(Layout(Text=="TRANSPORTATION"))
+        self.trans=TextInput()
+        self.add_widget(self.trans)
+
+        self.add_widget(Layout(text=="ACCOMADATION"))
+        self.ACCO=TextInput()
+        self.add_widget(self.ACCO)
+
+        self.add_widget(Layout(Text == "RESTAURANTS"))
+        self.REST == TextInput()
+        self.add_widget(self.REST)
+
+
+
+        self.press = Button(text=FOR_DETAILS_PACKAGES)
+        self.press.bind(on_click=self.FOR_MORE_PACKAGES)
+        self.add_widget(self.press)
+
+    def FOR_DETAILS_PACKAGES (self, isinstance):
+        print(" NAME : " + self.C_NAME)
+        print("AGE :"+ self.AGE)
+        print("GENDER : " + self.GENDER)
+        print(" DETAILS FOR TRANSPORTATION"+ self.trans)
+        print(" DETAILS FOR ACCOMADATION"+ self.ACCO)
+        print("DETAIILS FOR RESTAURANTS"+ self.REST)
+        print()
+
+
+        class factapp(App):
+            def build(self):
+                return travelapp
+        if __name__=="__main__":
+            while True:
+                factapp().run()
+
+
+
+
+
+
+
+
+
+
